@@ -16,95 +16,123 @@
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:layout_margin="5dp"
+        android:layout_toRightOf="@id/button_1"
         android:text="@string/button_two" />
 
     <Button
         android:id="@+id/button_3"
         android:layout_width="60dp"
         android:layout_height="60dp"
+        android:layout_toRightOf="@id/button_2"
         android:text="@string/button_three" />
+
+    <Button
+        android:id="@+id/button_plus"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_toRightOf="@id/button_3"
+        android:text="@string/button_plus" />
 
     <Button
         android:id="@+id/button_4"
         android:layout_width="60dp"
         android:layout_height="60dp"
+        android:layout_below="@id/button_1"
         android:text="@string/button_four" />
 
     <Button
         android:id="@+id/button_5"
         android:layout_width="60dp"
         android:layout_height="60dp"
+        android:layout_alignBaseline="@id/button_4"
+        android:layout_toRightOf="@id/button_4"
         android:text="@string/button_five" />
 
     <Button
         android:id="@+id/button_6"
         android:layout_width="60dp"
         android:layout_height="60dp"
+        android:layout_alignBaseline="@id/button_4"
+        android:layout_toRightOf="@id/button_5"
         android:text="@string/button_six" />
+
+    <Button
+        android:id="@+id/button_minus"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignBaseline="@id/button_4"
+        android:layout_toRightOf="@id/button_6"
+        android:text="@string/button_minus" />
+
 
     <Button
         android:id="@+id/button_7"
         android:layout_width="60dp"
         android:layout_height="60dp"
+        android:layout_below="@id/button_4"
         android:text="@string/button_seven" />
 
     <Button
         android:id="@+id/button_8"
         android:layout_width="60dp"
         android:layout_height="60dp"
+        android:layout_alignBaseline="@id/button_7"
+        android:layout_toRightOf="@id/button_7"
         android:text="@string/button_eight" />
 
     <Button
         android:id="@+id/button_9"
         android:layout_width="60dp"
         android:layout_height="60dp"
+        android:layout_alignBaseline="@id/button_7"
+        android:layout_toRightOf="@id/button_8"
         android:text="@string/button_nine" />
-
-    <Button
-        android:id="@+id/button_zero"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:text="@string/button_zero" />
-
-    <Button
-        android:id="@+id/button_plus"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:text="@string/button_plus" />
-
-    <Button
-        android:id="@+id/button_minus"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:text="@string/button_minus" />
 
     <Button
         android:id="@+id/button_multiply"
         android:layout_width="60dp"
         android:layout_height="60dp"
+        android:layout_alignBaseline="@id/button_7"
+        android:layout_toRightOf="@id/button_9"
         android:text="@string/button_multiply" />
 
     <Button
-        android:id="@+id/button_divide"
+        android:id="@+id/button_zero"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:text="@string/button_divide" />
+        android:layout_below="@id/button_7"
+        android:text="@string/button_zero" />
 
     <Button
         android:id="@+id/button_modulus"
         android:layout_width="60dp"
         android:layout_height="60dp"
+        android:layout_alignBaseline="@id/button_zero"
+        android:layout_toRightOf="@id/button_zero"
         android:text="@string/button_modulus" />
+
+    <Button
+        android:id="@+id/button_divide"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignBaseline="@id/button_zero"
+        android:layout_toRightOf="@id/button_modulus"
+        android:text="@string/button_divide" />
+
+
+    <Button
+        android:id="@+id/button_clear"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_below="@id/button_zero"
+        android:text="@string/button_clear" />
 
     <Button
         android:id="@+id/button_equal"
         android:layout_width="60dp"
         android:layout_height="60dp"
+        android:layout_alignBaseline="@id/button_clear"
+        android:layout_toRightOf="@id/button_clear"
         android:text="@string/button_equal" />
-    <Button
-        android:id="@+id/button_clear"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:text="@string/button_clear" />
 
 </RelativeLayout>
