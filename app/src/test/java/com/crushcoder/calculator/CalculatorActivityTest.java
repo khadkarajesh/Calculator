@@ -14,16 +14,23 @@ import static junit.framework.Assert.assertNotNull;
 @RunWith(RobolectricTestRunner.class)
 public class CalculatorActivityTest {
     CalculatorActivity calculatorActivity;
-    private Fragment displayFragment;
 
     @Before
     public void setUp() throws Exception {
         calculatorActivity = Robolectric.setupActivity(CalculatorActivity.class);
-        displayFragment = calculatorActivity.getFragmentManager().findFragmentById(R.id.display_fragment);
     }
 
     @Test
     public void shouldHaveDisplayFragment() throws Exception {
-        assertNotNull(displayFragment);
+        assertNotNull(getFragmentById(R.id.display_fragment));
+    }
+
+    @Test
+    public void shouldHaveButtonFragment() throws Exception {
+        assertNotNull(getFragmentById(R.id.button_fragment));
+    }
+
+    public Fragment getFragmentById(int id){
+        return calculatorActivity.getFragmentManager().findFragmentById(id);
     }
 }
