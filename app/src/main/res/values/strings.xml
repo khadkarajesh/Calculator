@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Calculator</string>
     <string name="greeting_message">Hello World!</string>
+    <string name="default_display">display</string>
 </resources>

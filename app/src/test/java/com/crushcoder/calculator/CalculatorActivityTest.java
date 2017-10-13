@@ -1,8 +1,7 @@
 package com.crushcoder.calculator;
 
-import android.widget.TextView;
 
-import com.crushcoder.calculator.support.ResourceLocator;
+import android.app.Fragment;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -10,23 +9,21 @@ import org.junit.runner.RunWith;
 import org.robolectric.Robolectric;
 import org.robolectric.RobolectricTestRunner;
 
-import static com.crushcoder.calculator.support.Assert.assertViewIsVisible;
-import static org.hamcrest.core.IsEqual.equalTo;
-import static org.junit.Assert.assertThat;
+import static junit.framework.Assert.assertNotNull;
 
 @RunWith(RobolectricTestRunner.class)
 public class CalculatorActivityTest {
     CalculatorActivity calculatorActivity;
+    private Fragment displayFragment;
 
     @Before
     public void setUp() throws Exception {
         calculatorActivity = Robolectric.setupActivity(CalculatorActivity.class);
+        displayFragment = calculatorActivity.getFragmentManager().findFragmentById(R.id.display_fragment);
     }
 
     @Test
-    public void shouldShowGreetings() throws Exception {
-        TextView textView = calculatorActivity.findViewById(R.id.calculator_tv_display);
-        assertViewIsVisible(textView);
-        assertThat(textView.getText().toString(), equalTo(ResourceLocator.getString(R.string.greeting_message)));
+    public void shouldHaveDisplayFragment() throws Exception {
+        assertNotNull(displayFragment);
     }
 }
