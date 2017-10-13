@@ -42,4 +42,11 @@ public class ButtonFragmentTest {
         assertViewIsVisible(buttonOne);
         assertThat(buttonOne.getText().toString(), equalTo(ResourceLocator.getString(R.string.button_one)));
     }
+
+    @Test
+    public void shouldHaveTwoButton() throws Exception {
+        Button buttonTwo = buttonFragment.getView().findViewById(R.id.button_2);
+        assertViewIsVisible(buttonTwo);
+        assertThat(buttonTwo.getText().toString(), equalTo(ResourceLocator.getString(R.string.button_two)));
+    }
 }

@@ -8,6 +8,14 @@
         android:id="@+id/button_1"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:text="@string/button_one"
-        android:layout_margin="5dp" />
+        android:layout_margin="5dp"
+        android:text="@string/button_one" />
+
+    <Button
+        android:id="@+id/button_2"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_margin="5dp"
+        android:text="@string/button_two" />
+
 </RelativeLayout>
