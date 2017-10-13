@@ -1,5 +1,9 @@
 package com.crushcoder.calculator;
 
 
-class DisplayFragment {
+import android.app.Fragment;
+
+public class DisplayFragment extends Fragment {
+    public DisplayFragment() {
+    }
 }
