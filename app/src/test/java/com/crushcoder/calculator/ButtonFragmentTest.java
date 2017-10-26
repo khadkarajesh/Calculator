@@ -11,6 +11,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.robolectric.RobolectricTestRunner;
+import org.robolectric.shadows.ShadowToast;
 
 import static com.crushcoder.calculator.support.Assert.assertViewIsVisible;
 import static junit.framework.Assert.assertNotNull;
@@ -23,12 +24,14 @@ public class ButtonFragmentTest {
 
     private ButtonFragment buttonFragment;
     private RelativeLayout buttonContainer;
+    private Button buttonOne;
 
     @Before
     public void setUp() throws Exception {
         buttonFragment = ButtonFragment.newInstance();
         startFragment(buttonFragment);
         buttonContainer = buttonFragment.getView().findViewById(R.id.calculator_buttons);
+        buttonOne = getButtonById(R.id.button_1);
     }
 
     @Test
@@ -39,7 +42,6 @@ public class ButtonFragmentTest {
 
     @Test
     public void shouldHaveOneButton() throws Exception {
-        Button buttonOne = getButtonById(R.id.button_1);
         assertViewIsVisible(buttonOne);
         assertThat(buttonOne.getText().toString(), equalTo(ResourceLocator.getString(R.string.button_one)));
     }
@@ -167,4 +169,9 @@ public class ButtonFragmentTest {
         return (Button) getViewById(id);
     }
 
+    @Test
+    public void oneButtonShouldShowToast() throws Exception {
+        buttonOne.performClick();
+        assertThat(ShadowToast.getTextOfLatestToast(), equalTo(buttonOne.getText()));
+    }
 }
