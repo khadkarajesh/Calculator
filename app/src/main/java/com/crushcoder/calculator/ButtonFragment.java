@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 public class ButtonFragment extends Fragment {
     private Button mBtnThree;
+    private Button mBtnFour;
 
     public ButtonFragment() {
     }
@@ -30,6 +31,7 @@ public class ButtonFragment extends Fragment {
         mBtnOne = view.findViewById(R.id.button_1);
         mBtnTwo = view.findViewById(R.id.button_2);
         mBtnThree = view.findViewById(R.id.button_3);
+        mBtnFour = view.findViewById(R.id.button_4);
         return view;
     }
 
@@ -51,6 +53,13 @@ public class ButtonFragment extends Fragment {
         });
 
         mBtnThree.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showToast((TextView) v);
+            }
+        });
+
+        mBtnFour.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 showToast((TextView) v);
