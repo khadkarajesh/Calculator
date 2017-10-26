@@ -171,7 +171,11 @@ public class ButtonFragmentTest {
 
     @Test
     public void oneButtonShouldShowToast() throws Exception {
-        buttonOne.performClick();
-        assertThat(ShadowToast.getTextOfLatestToast(), equalTo(buttonOne.getText()));
+        verifyToastAfterButtonClick(buttonOne);
+    }
+
+    private void verifyToastAfterButtonClick(Button button) {
+        button.performClick();
+        assertThat(ShadowToast.getTextOfLatestToast(), equalTo(button.getText()));
     }
 }
