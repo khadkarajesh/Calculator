@@ -29,6 +29,11 @@ public class ButtonFragmentTest {
     private Button buttonFour;
     private Button buttonFive;
     private Button buttonSix;
+    private Button buttonSeven;
+    private Button buttonEight;
+    private Button buttonNine;
+    private Button buttonZero;
+    private Button buttonEqual, buttonPlus, buttonDivide, buttonMinus, buttonMultiply, buttonClear, buttonModulus;
 
     @Before
     public void setUp() throws Exception {
@@ -41,6 +46,17 @@ public class ButtonFragmentTest {
         buttonFour = getButtonById(R.id.button_4);
         buttonFive = getButtonById(R.id.button_5);
         buttonSix = getButtonById(R.id.button_6);
+        buttonSeven = getButtonById(R.id.button_7);
+        buttonEight = getButtonById(R.id.button_8);
+        buttonNine = getButtonById(R.id.button_9);
+        buttonZero = getButtonById(R.id.button_zero);
+        buttonEqual = getButtonById(R.id.button_equal);
+        buttonPlus = getButtonById(R.id.button_plus);
+        buttonMinus = getButtonById(R.id.button_minus);
+        buttonMultiply = getButtonById(R.id.button_multiply);
+        buttonClear = getButtonById(R.id.button_clear);
+        buttonDivide = getButtonById(R.id.button_divide);
+        buttonModulus = getButtonById(R.id.button_modulus);
     }
 
 
@@ -76,21 +92,18 @@ public class ButtonFragmentTest {
 
     @Test
     public void shouldHaveFiveButton() throws Exception {
-        Button buttonFive = getButtonById(R.id.button_5);
         assertViewIsVisible(buttonFive);
         assertThat(buttonFive.getText().toString(), equalTo(ResourceLocator.getString(R.string.button_five)));
     }
 
     @Test
     public void shouldHaveSixButton() throws Exception {
-        Button buttonSix = getButtonById(R.id.button_6);
         assertViewIsVisible(buttonSix);
         assertThat(buttonSix.getText().toString(), equalTo(ResourceLocator.getString(R.string.button_six)));
     }
 
     @Test
     public void shouldHaveSevenButton() throws Exception {
-        Button buttonSeven = getButtonById(R.id.button_7);
         assertViewIsVisible(buttonSeven);
         assertThat(buttonSeven.getText().toString(), equalTo(ResourceLocator.getString(R.string.button_seven)));
     }
@@ -98,14 +111,12 @@ public class ButtonFragmentTest {
 
     @Test
     public void shouldHaveEightButton() throws Exception {
-        Button buttonEight = getButtonById(R.id.button_8);
         assertViewIsVisible(buttonEight);
         assertThat(buttonEight.getText().toString(), equalTo(ResourceLocator.getString(R.string.button_eight)));
     }
 
     @Test
     public void shouldHaveNineButton() throws Exception {
-        Button buttonNine = getButtonById(R.id.button_9);
         assertViewIsVisible(buttonNine);
         assertThat(buttonNine.getText().toString(), equalTo(ResourceLocator.getString(R.string.button_nine)));
     }
@@ -113,28 +124,24 @@ public class ButtonFragmentTest {
 
     @Test
     public void shouldHavePlusButton() throws Exception {
-        Button buttonPlus = getButtonById(R.id.button_plus);
         assertViewIsVisible(buttonPlus);
         assertThat(buttonPlus.getText().toString(), equalTo(ResourceLocator.getString(R.string.button_plus)));
     }
 
     @Test
     public void shouldHaveMinusButton() throws Exception {
-        Button buttonMinus = getButtonById(R.id.button_minus);
         assertViewIsVisible(buttonMinus);
         assertThat(buttonMinus.getText().toString(), equalTo(ResourceLocator.getString(R.string.button_minus)));
     }
 
     @Test
     public void shouldHaveMultiplyButton() throws Exception {
-        Button buttonMultiply = getButtonById(R.id.button_multiply);
         assertViewIsVisible(buttonMultiply);
         assertThat(buttonMultiply.getText().toString(), equalTo(ResourceLocator.getString(R.string.button_multiply)));
     }
 
     @Test
     public void shouldHaveDivideButton() throws Exception {
-        Button buttonDivide = getButtonById(R.id.button_divide);
         assertViewIsVisible(buttonDivide);
         assertThat(buttonDivide.getText().toString(), equalTo(ResourceLocator.getString(R.string.button_divide)));
     }
@@ -142,28 +149,24 @@ public class ButtonFragmentTest {
 
     @Test
     public void shouldHaveModulusButton() throws Exception {
-        Button buttonModulus = getButtonById(R.id.button_modulus);
         assertViewIsVisible(buttonModulus);
         assertThat(buttonModulus.getText().toString(), equalTo(ResourceLocator.getString(R.string.button_modulus)));
     }
 
     @Test
     public void shouldHaveEqualButton() throws Exception {
-        Button buttonEqual = getButtonById(R.id.button_equal);
         assertViewIsVisible(buttonEqual);
         assertThat(buttonEqual.getText().toString(), equalTo(ResourceLocator.getString(R.string.button_equal)));
     }
 
     @Test
     public void shouldHaveClearButton() throws Exception {
-        Button buttonClear = getButtonById(R.id.button_clear);
         assertViewIsVisible(buttonClear);
         assertThat(buttonClear.getText().toString(), equalTo(ResourceLocator.getString(R.string.button_clear)));
     }
 
     @Test
     public void shouldHaveZeroButton() throws Exception {
-        Button buttonZero = getButtonById(R.id.button_zero);
         assertViewIsVisible(buttonZero);
         assertThat(buttonZero.getText().toString(), equalTo(ResourceLocator.getString(R.string.button_zero)));
     }
@@ -206,6 +209,28 @@ public class ButtonFragmentTest {
         verifyToastAfterButtonClick(buttonSix);
     }
 
+    @Test
+    public void sevenButtonShouldShowToast() throws Exception {
+        verifyToastAfterButtonClick(buttonSeven);
+    }
+
+    @Test
+    public void eightButtonShouldShowToast() throws Exception {
+        verifyToastAfterButtonClick(buttonEight);
+    }
+
+    @Test
+    public void shouldShowToast() throws Exception {
+        verifyToastAfterButtonClick(buttonNine);
+        verifyToastAfterButtonClick(buttonZero);
+        verifyToastAfterButtonClick(buttonClear);
+        verifyToastAfterButtonClick(buttonDivide);
+        verifyToastAfterButtonClick(buttonEqual);
+        verifyToastAfterButtonClick(buttonMinus);
+        verifyToastAfterButtonClick(buttonMultiply);
+        verifyToastAfterButtonClick(buttonModulus);
+
+    }
 
     private void verifyToastAfterButtonClick(Button button) {
         button.performClick();
