@@ -27,6 +27,8 @@ public class ButtonFragmentTest {
     private Button buttonOne, buttonTwo;
     private Button buttonThree;
     private Button buttonFour;
+    private Button buttonFive;
+    private Button buttonSix;
 
     @Before
     public void setUp() throws Exception {
@@ -37,6 +39,8 @@ public class ButtonFragmentTest {
         buttonTwo = getButtonById(R.id.button_2);
         buttonThree = getButtonById(R.id.button_3);
         buttonFour = getButtonById(R.id.button_4);
+        buttonFive = getButtonById(R.id.button_5);
+        buttonSix = getButtonById(R.id.button_6);
     }
 
 
@@ -191,6 +195,17 @@ public class ButtonFragmentTest {
     public void fourButtonShouldShowToast() throws Exception {
         verifyToastAfterButtonClick(buttonFour);
     }
+
+    @Test
+    public void fiveButtonShouldShowToast() throws Exception {
+        verifyToastAfterButtonClick(buttonFive);
+    }
+
+    @Test
+    public void sixButtonShouldShowToast() throws Exception {
+        verifyToastAfterButtonClick(buttonSix);
+    }
+
 
     private void verifyToastAfterButtonClick(Button button) {
         button.performClick();
