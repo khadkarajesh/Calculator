@@ -24,7 +24,8 @@ public class ButtonFragmentTest {
 
     private ButtonFragment buttonFragment;
     private RelativeLayout buttonContainer;
-    private Button buttonOne;
+    private Button buttonOne, buttonTwo;
+    private Button buttonThree;
 
     @Before
     public void setUp() throws Exception {
@@ -32,6 +33,8 @@ public class ButtonFragmentTest {
         startFragment(buttonFragment);
         buttonContainer = buttonFragment.getView().findViewById(R.id.calculator_buttons);
         buttonOne = getButtonById(R.id.button_1);
+        buttonTwo = getButtonById(R.id.button_2);
+        buttonThree = getButtonById(R.id.button_3);
     }
 
     @Test
@@ -48,14 +51,12 @@ public class ButtonFragmentTest {
 
     @Test
     public void shouldHaveTwoButton() throws Exception {
-        Button buttonTwo = getButtonById(R.id.button_2);
         assertViewIsVisible(buttonTwo);
         assertThat(buttonTwo.getText().toString(), equalTo(ResourceLocator.getString(R.string.button_two)));
     }
 
     @Test
     public void shouldHaveThreeButton() throws Exception {
-        Button buttonThree = getButtonById(R.id.button_3);
         assertViewIsVisible(buttonThree);
         assertThat(buttonThree.getText().toString(), equalTo(ResourceLocator.getString(R.string.button_three)));
     }
@@ -172,6 +173,16 @@ public class ButtonFragmentTest {
     @Test
     public void oneButtonShouldShowToast() throws Exception {
         verifyToastAfterButtonClick(buttonOne);
+    }
+
+    @Test
+    public void twoButtonShouldShowToast() {
+        verifyToastAfterButtonClick(buttonTwo);
+    }
+
+    @Test
+    public void threeButtonShouldShowToast() throws Exception {
+        verifyToastAfterButtonClick(buttonThree);
     }
 
     private void verifyToastAfterButtonClick(Button button) {

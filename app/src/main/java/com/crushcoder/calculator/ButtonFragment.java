@@ -12,10 +12,12 @@ import android.widget.Toast;
 
 
 public class ButtonFragment extends Fragment {
+    private Button mBtnThree;
+
     public ButtonFragment() {
     }
 
-    private Button mBtnOne;
+    private Button mBtnOne, mBtnTwo;
 
     public static ButtonFragment newInstance() {
         return new ButtonFragment();
@@ -26,6 +28,8 @@ public class ButtonFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_button, container, false);
         mBtnOne = view.findViewById(R.id.button_1);
+        mBtnTwo = view.findViewById(R.id.button_2);
+        mBtnThree = view.findViewById(R.id.button_3);
         return view;
     }
 
@@ -35,8 +39,27 @@ public class ButtonFragment extends Fragment {
         mBtnOne.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getActivity(), ((TextView) v).getText().toString(), Toast.LENGTH_SHORT).show();
+                showToast((TextView) v);
             }
         });
+
+        mBtnTwo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showToast((TextView) v);
+            }
+        });
+
+        mBtnThree.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showToast((TextView) v);
+            }
+        });
+
+    }
+
+    private void showToast(TextView v) {
+        Toast.makeText(getActivity(), v.getText().toString(), Toast.LENGTH_SHORT).show();
     }
 }
