@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Calculator</string>
     <string name="greeting_message">Hello World!</string>
-    <string name="default_display">display</string>
+    <string name="default_display">""</string>
     <string name="button_one">1</string>
     <string name="button_two">2</string>
     <string name="button_three">3</string>

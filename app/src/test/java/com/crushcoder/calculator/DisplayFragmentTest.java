@@ -54,16 +54,53 @@ public class DisplayFragmentTest {
     }
 
     @Test
+    public void shouldMultiply() throws Exception {
+        displayFragment.setDisplay("1");
+        displayFragment.setDisplay("*");
+        displayFragment.setDisplay("2");
+        displayFragment.setDisplay("=");
+        assertEquals("2", display.getText().toString());
+    }
+
+    @Test
+    public void shouldDivide() throws Exception {
+        displayFragment.setDisplay("6");
+        displayFragment.setDisplay("/");
+        displayFragment.setDisplay("2");
+        displayFragment.setDisplay("=");
+        assertEquals("3.0", display.getText().toString());
+    }
+
+    @Test
+    public void shouldDivideFloatValue() throws Exception {
+        displayFragment.setDisplay("1");
+        displayFragment.setDisplay("/");
+        displayFragment.setDisplay("2");
+        displayFragment.setDisplay("=");
+        assertEquals("0.5", display.getText().toString());
+    }
+
+    @Test
+    public void shouldMinusValue() throws Exception {
+        displayFragment.setDisplay("2");
+        displayFragment.setDisplay("-");
+        displayFragment.setDisplay("2");
+        displayFragment.setDisplay("=");
+        assertEquals("0.0", display.getText().toString());
+
+//        displayFragment.setDisplay("1");
+//        displayFragment.setDisplay("-");
+//        displayFragment.setDisplay("2");
+//        displayFragment.setDisplay("=");
+//        assertEquals("-1", display.getText().toString());
+    }
+
+    @Test
     public void shouldAddDigits() throws Exception {
         displayFragment.setDisplay("1");
         displayFragment.setDisplay("+");
         displayFragment.setDisplay("2");
         displayFragment.setDisplay("=");
         assertEquals("3", display.getText().toString());
-    }
-
-    @Test
-    public void shouldAddTwoDigits() throws Exception {
-
     }
 }

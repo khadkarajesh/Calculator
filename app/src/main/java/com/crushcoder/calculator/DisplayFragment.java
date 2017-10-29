@@ -28,16 +28,34 @@ public class DisplayFragment extends Fragment {
     }
 
     public void setDisplay(String text) {
+        String displayText = mEdtDisplay.getText().toString().trim();
+        String[] v;
+        String result = null;
         if (mEdtDisplay.getText().toString().equalsIgnoreCase("display")) {
             mEdtDisplay.setText("");
         }
+
         if (!isEqualOperator(text)) {
             mEdtDisplay.getText().append(text);
         } else {
-            String result = mEdtDisplay.getText().toString().trim();
-            String[] v = result.split("\\+");
-            int value = Integer.parseInt(v[0]) + Integer.parseInt(v[1]);
-            mEdtDisplay.setText("" + value);
+            if (displayText.contains("+")) {
+                v = displayText.split("\\+");
+                int value = Integer.parseInt(v[0]) + Integer.parseInt(v[1]);
+                result = String.valueOf(value);
+            } else if (displayText.contains("*")) {
+                v = displayText.split("\\*");
+                int value = Integer.parseInt(v[0]) * Integer.parseInt(v[1]);
+                result = String.valueOf(value);
+            } else if (displayText.contains("/")) {
+                v = displayText.split("\\/");
+                float value = (float) Integer.parseInt(v[0]) / Integer.parseInt(v[1]);
+                result = String.valueOf(value);
+            } else if (displayText.contains("-")) {
+                v = displayText.split("\\-");
+                float value = (float) Integer.parseInt(v[0]) - Integer.parseInt(v[1]);
+                result = String.valueOf(value);
+            }
+            mEdtDisplay.setText("" + result);
         }
     }
 
