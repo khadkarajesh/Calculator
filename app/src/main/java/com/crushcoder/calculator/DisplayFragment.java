@@ -51,8 +51,8 @@ public class DisplayFragment extends Fragment {
                 float value = (float) Integer.parseInt(v[0]) / Integer.parseInt(v[1]);
                 result = String.valueOf(value);
             } else if (displayText.contains("-")) {
-                v = displayText.split("\\-");
-                float value = (float) Integer.parseInt(v[0]) - Integer.parseInt(v[1]);
+                v = displayText.split("-");
+                int value = Integer.parseInt(v[0]) - Integer.parseInt(v[1]);
                 result = String.valueOf(value);
             }
             mEdtDisplay.setText("" + result);
