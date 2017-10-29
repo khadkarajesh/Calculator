@@ -3,6 +3,7 @@ package com.crushcoder.calculator;
 
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.RelativeLayout;
 
 import com.crushcoder.calculator.support.ResourceLocator;
@@ -10,10 +11,12 @@ import com.crushcoder.calculator.support.ResourceLocator;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.robolectric.Robolectric;
 import org.robolectric.RobolectricTestRunner;
 import org.robolectric.shadows.ShadowToast;
 
 import static com.crushcoder.calculator.support.Assert.assertViewIsVisible;
+import static junit.framework.Assert.assertEquals;
 import static junit.framework.Assert.assertNotNull;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.IsEqual.equalTo;
@@ -36,10 +39,23 @@ public class ButtonFragmentTest {
     private Button buttonZero;
     private Button buttonEqual, buttonPlus, buttonDivide, buttonMinus, buttonMultiply, buttonClear, buttonModulus;
 
+    private DisplayFragment displayFragment;
+    private EditText display;
+
+    CalculatorActivity calculatorActivity;
+
     @Before
     public void setUp() throws Exception {
+
+        calculatorActivity = Robolectric.setupActivity(CalculatorActivity.class);
+        displayFragment = (DisplayFragment) calculatorActivity.getFragmentManager().findFragmentById(R.id.display_fragment);
+
+        display = displayFragment.getView().findViewById(R.id.calculator_display);
+
         buttonFragment = ButtonFragment.newInstance();
         startFragment(buttonFragment);
+
+
         buttonContainer = buttonFragment.getView().findViewById(R.id.calculator_buttons);
         buttonOne = getButtonById(R.id.button_1);
         buttonTwo = getButtonById(R.id.button_2);
@@ -236,5 +252,26 @@ public class ButtonFragmentTest {
     private void verifyToastAfterButtonClick(Button button) {
         button.performClick();
         assertThat(ShadowToast.getTextOfLatestToast(), equalTo(button.getText()));
+    }
+
+    @Test
+    public void shouldShowOneOnDisplay() throws Exception {
+        buttonOne.performClick();
+        displayFragment.setDisplay(buttonOne.getText().toString());
+        assertEquals("1", display.getText().toString());
+    }
+
+    @Test
+    public void shouldShowTwoOnDisplay() throws Exception {
+        buttonTwo.performClick();
+        displayFragment.setDisplay(buttonTwo.getText().toString());
+        assertEquals("2", display.getText().toString());
+    }
+
+    @Test
+    public void shouldShowPlusOnDisplay() throws Exception {
+        buttonPlus.performClick();
+        displayFragment.setDisplay(buttonPlus.getText().toString());
+        assertEquals("+", display.getText().toString());
     }
 }
