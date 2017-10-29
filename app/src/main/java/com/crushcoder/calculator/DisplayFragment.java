@@ -35,6 +35,11 @@ public class DisplayFragment extends Fragment {
             mEdtDisplay.setText("");
         }
 
+        if (text.equalsIgnoreCase("c")) {
+            mEdtDisplay.setText("");
+            return;
+        }
+
         if (!isEqualOperator(text)) {
             mEdtDisplay.getText().append(text);
         } else {
