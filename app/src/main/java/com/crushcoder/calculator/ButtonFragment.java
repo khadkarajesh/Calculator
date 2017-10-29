@@ -15,7 +15,18 @@ public class ButtonFragment extends Fragment implements View.OnClickListener {
     private Button mBtnThree;
     private Button mBtnFour;
     private Button mBtnFive;
-    private Button mBtnSix, mBtnSeven, mBtnEight, mBtnNine, mBtnZero, mBtnModulus, mBtnPlus, mBtnDivide, mBtnClear, mBtnMinus, mBtnMultiply,mBtnEqual;
+    private Button mBtnSix;
+    private Button mBtnSeven;
+    private Button mBtnEight;
+    private Button mBtnNine;
+    private Button mBtnZero;
+    private Button mBtnModulus;
+    private Button mBtnPlus;
+    private Button mBtnDivide;
+    private Button mBtnClear;
+    private Button mBtnMinus;
+    private Button mBtnMultiply;
+    private Button mBtnEqual;
 
     public ButtonFragment() {
     }

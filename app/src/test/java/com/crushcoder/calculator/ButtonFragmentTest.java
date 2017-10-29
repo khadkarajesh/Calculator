@@ -24,7 +24,8 @@ public class ButtonFragmentTest {
 
     private ButtonFragment buttonFragment;
     private RelativeLayout buttonContainer;
-    private Button buttonOne, buttonTwo;
+    private Button buttonOne;
+    private Button buttonTwo;
     private Button buttonThree;
     private Button buttonFour;
     private Button buttonFive;
