@@ -57,8 +57,14 @@ public class DisplayFragment extends Fragment {
                 result = String.valueOf(value);
             } else if (displayText.contains("-")) {
                 v = displayText.split("-");
-                int value = Integer.parseInt(v[0]) - Integer.parseInt(v[1]);
-                result = String.valueOf(value);
+                int value;
+                if (v.length == 2) {
+                    value = Integer.parseInt(v[0]) - Integer.parseInt(v[1]);
+                    result = String.valueOf(value);
+                } else if (v.length == 3) {
+                    value = Integer.parseInt(v[1]) + Integer.parseInt(v[2]);
+                    result = String.valueOf("-" + value);
+                }
             }
             mEdtDisplay.setText("" + result);
         }

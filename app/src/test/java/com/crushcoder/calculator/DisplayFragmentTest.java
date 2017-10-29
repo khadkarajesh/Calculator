@@ -94,6 +94,12 @@ public class DisplayFragmentTest {
         displayFragment.setDisplay("2");
         displayFragment.setDisplay("=");
         assertEquals("1", display.getText().toString());
+
+        displayFragment.setDisplay("-3");
+        displayFragment.setDisplay("-");
+        displayFragment.setDisplay("2");
+        displayFragment.setDisplay("=");
+        assertEquals("-5", display.getText().toString());
     }
 
     @Test
